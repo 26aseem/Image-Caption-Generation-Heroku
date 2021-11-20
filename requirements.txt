@@ -1,6 +1,6 @@
 streamlit
 sklearn
 argparse
-tensorflow-cpu
+tensorflow
 gtts
 playsound

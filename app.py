@@ -1,4 +1,5 @@
 # Import the required packages
+import os
 import numpy as np
 import argparse
 import streamlit as st
@@ -7,9 +8,9 @@ from pickle import load
 from PIL import Image
 
 # For Model training and testing
-from tensorflow-cpu.keras.preprocessing.sequence import pad_sequences
-from tensorflow-cpu.keras.applications.xception import Xception
-from tensorflow-cpu.keras.models import load_model
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.applications.xception import Xception
+from tensorflow.keras.models import load_model
 
 # For text-to-speech
 from gtts import gTTS
