@@ -6,7 +6,6 @@ import streamlit as st
 import pickle
 from pickle import load
 from PIL import Image
-import pyttsx3
 
 # For Model training and testing
 from keras.preprocessing.sequence import pad_sequences
@@ -14,8 +13,8 @@ from keras.applications.xception import Xception
 from keras.models import load_model
 
 # For text-to-speech
-#from gtts import gTTS
-#from playsound import playsound
+from gtts import gTTS
+from playsound import playsound
 
 
 ### Module Definitions
@@ -106,21 +105,17 @@ if st.button('Generate Caption'):
     st.title(str(description))
     
     # Language in which you want to convert
-    #language = 'en'
+    language = 'en'
   
     # Passing the text and language to the engine, 
     # here we have marked slow=False. Which tells 
     # the module that the converted audio should 
     # have a high speed
-    #sound_desc = gTTS(text=str(description), lang=language, slow=False)
+    sound_desc = gTTS(text=str(description), lang=language, slow=False)
     
     # Saving the converted audio in a mp3 file named welcome 
-    #sound_desc.save("description.mp3")
+    sound_desc.save("description.mp3")
   
     # Playing the converted file
-    #playsound("./description.mp3")
-
-    engine = pyttsx3.init()
-    engine.say(str(description))
-    engine.runAndWait()
+    playsound("./description.mp3")
     
