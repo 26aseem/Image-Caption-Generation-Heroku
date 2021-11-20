@@ -1,0 +1,6 @@
+streamlit
+sklearn
+argparse
+tensorflow
+gtts
+playsound
