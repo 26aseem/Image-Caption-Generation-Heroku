@@ -117,5 +117,12 @@ else:
         sound_desc.save("description.mp3")
         
         # Playing the converted file
-        playsound("./description.mp3")
+        #playsound("./description.mp3")
+
+	from pydub import AudioSegment
+	from pydub.playback import play
+  
+	# for playing mp3 file
+	song = AudioSegment.from_mp3("description.mp3")
+	play(song)
     
