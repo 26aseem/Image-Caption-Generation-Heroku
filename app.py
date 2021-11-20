@@ -90,32 +90,32 @@ else:
     #if isinstance(file, BytesIO):
     show_file.image(file)
     
-if st.button('Generate Caption'):
-    # query
-    max_length = 32
-    tokenizer = load(open("tokenizer.p","rb"))
-    model = load_model('models/model_9.h5')
-    xception_model = Xception(include_top=False, pooling="avg")
-    photo = extract_features(file, xception_model)
+    if st.button('Generate Caption'):
+        # query
+        max_length = 32
+        tokenizer = load(open("tokenizer.p","rb"))
+        model = load_model('models/model_9.h5')
+        xception_model = Xception(include_top=False, pooling="avg")
+        photo = extract_features(file, xception_model)
 
-    # Generate Description here
-    description = generate_desc(model, tokenizer, photo, max_length)
+        # Generate Description here
+        description = generate_desc(model, tokenizer, photo, max_length)
     
-    # Print Generated Caption
-    st.title(str(description))
+        # Print Generated Caption
+        st.title(str(description))
     
-    # Language in which you want to convert
-    language = 'en'
+        # Language in which you want to convert
+        language = 'en'
   
-    # Passing the text and language to the engine, 
-    # here we have marked slow=False. Which tells 
-    # the module that the converted audio should 
-    # have a high speed
-    sound_desc = gTTS(text=str(description), lang=language, slow=False)
+        # Passing the text and language to the engine, 
+        # here we have marked slow=False. Which tells 
+        # the module that the converted audio should 
+        # have a high speed
+        sound_desc = gTTS(text=str(description), lang=language, slow=False)
     
-    # Saving the converted audio in a mp3 file named welcome 
-    sound_desc.save("description.mp3")
-  
-    # Playing the converted file
-    playsound("./description.mp3")
+        # Saving the converted audio in a mp3 file named welcome 
+        sound_desc.save("description.mp3")
+        
+        # Playing the converted file
+        playsound("./description.mp3")
     
