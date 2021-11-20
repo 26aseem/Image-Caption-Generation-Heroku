@@ -1,6 +1,5 @@
 streamlit
 sklearn
 argparse
-tensorflow-cpu
-gtts
-playsound
+keras 
+pyttsx3
