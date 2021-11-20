@@ -4,4 +4,3 @@ argparse
 tensorflow-cpu 
 gtts
 playsound
-pydub
