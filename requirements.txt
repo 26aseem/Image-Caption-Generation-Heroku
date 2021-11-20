@@ -1,6 +1,6 @@
 streamlit
 sklearn
 argparse
-tensorflow
+tensorflow==2.0.0
 gtts
 playsound
